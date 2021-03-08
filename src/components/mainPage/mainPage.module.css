@@ -1,0 +1,59 @@
+
+.wrapper {
+    align-content: center;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #61dafb;
+    overflow: auto
+}
+
+.gifWrapper {
+    margin: 0 auto;
+    align-content: center;
+}
+
+.searchEl {
+    display: inline-block;
+    margin: 0 auto;
+}
+
+.wrapper textarea{
+    height: 42px;
+    width: 299px;
+    white-space: nowrap;
+    background-color: #282c34;
+
+}.wrapper button{
+     height: 28px;
+     width: 50px;
+    border-radius: revert;
+}
+
+.form input {
+    height: 22px;
+}
+.images {
+    width: 350px;
+    height: 350px;
+}
+
+.descriptionBblock {
+    color: #1f67e9;
+    border-style: dotted;
+    height: 115px;
+}
+
+.imageBlock{
+    width: 350px;
+    background-color: #26c3ff;
+    margin: 5px;
+    display: inline-grid;
+}
+
+.preloaderBlock {
+    display: flex;
+}
