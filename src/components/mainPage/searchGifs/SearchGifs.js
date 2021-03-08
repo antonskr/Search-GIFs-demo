@@ -6,8 +6,12 @@ const SearchGifs = (props) => {
     return (
         <div>
             {props.preload === true ? <Preloader/> : !props.dataSearch.length ? null :
-                props.dataSearch.map(d => <span key={d.id}>
+                props.dataSearch.map(d => <span className={s.imageBlock} key={d.id}>
                         <img className={s.images} src={d.images.original.url} alt=""/>
+                        <div className={s.descriptionBlock}>
+                                <p className={s.username}>{`Created by  ${d.username}`}</p>
+                                <p className={s.descripton}> {d.title} </p>
+                            </div>
                     </span>)}
         </div>
     )

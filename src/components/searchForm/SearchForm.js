@@ -7,12 +7,12 @@ import React from "react";
 const addSearchForm = (props) => {
     debugger
     return (
-        <form onSubmit={props.dirty ? props.handleSubmit : props.handleSubmit(submit)}>
-            <div className={s.form}>
+        <div className={s.searchFormBlock}>
+            <form onSubmit={props.dirty ? props.handleSubmit : props.handleSubmit(submit)}>
                 <Field name="textField" placeholder={props.values} type="input" component={Input} label="TextField"/>
-                <button disabled={props.preload}> поиск</button>
-            </div>
-        </form>
+                <button className={s.searchFormBtn} disabled={props.preload}> поиск</button>
+            </form>
+        </div>
     )
 }
 export const AddSearchFormRedux = reduxForm(

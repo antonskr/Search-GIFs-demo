@@ -11,37 +11,42 @@
     overflow: auto
 }
 
+
+
+
 .gifWrapper {
     margin: 0 auto;
     align-content: center;
 }
 
-.searchEl {
-    display: inline-block;
-    margin: 0 auto;
-}
-
-.wrapper textarea{
+.wrapper textarea {
     height: 42px;
     width: 299px;
     white-space: nowrap;
     background-color: #282c34;
-
-}.wrapper button{
-     height: 28px;
-     width: 50px;
-    border-radius: revert;
 }
 
-.form input {
+.searchFormBlock {
+    writing-mode: vertical-lr;
+    display: inline-block;
+    margin: 10px 0 12px 0;
+}
+
+.searchFormBlock button {
+    height: 28px;
+    width: 50px;
+}
+
+.searchFormBlock input {
     height: 22px;
 }
+
 .images {
     width: 350px;
     height: 350px;
 }
 
-.descriptionBblock {
+.descriptionBlock {
     color: #1f67e9;
     border-style: dotted;
     height: 115px;

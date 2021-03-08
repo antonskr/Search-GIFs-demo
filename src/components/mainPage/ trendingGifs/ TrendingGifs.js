@@ -11,7 +11,7 @@ const TrendingGifs = (props) => {
                     props.data.map(d => <span className={s.imageBlock} key={d.id}>
                         <div>
                             <img className={s.images} src={d.images.original.url} alt=""/>
-                            <div className={s.descriptionBblock}>
+                            <div className={s.descriptionBlock}>
                                 <p className={s.username}>{`Created by  ${d.username}`}</p>
                                 <p className={s.descripton}> {d.title} </p>
                             </div>

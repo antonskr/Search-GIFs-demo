@@ -11,7 +11,7 @@ const MainPage = (props) => {
     }
     return (
         <div className={s.wrapper}>
-            <span className={s.searchEl}>
+            <span>
                <AddSearchFormRedux onSubmit={values => {
                    AddNewMessage(values.textField)
                }}
