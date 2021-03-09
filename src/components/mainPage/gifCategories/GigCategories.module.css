@@ -1,0 +1,20 @@
+li:hover {
+    color: white;
+}
+
+.categoriesWrapper {
+    background-color: #26c3ff;
+    display: inline-block;
+    width: 100%;
+}
+
+.categoriesWrapper li {
+    list-style: none;
+    text-align: center;
+    font-size: 20px;
+}
+
+.categoriesWrapper ul {
+    margin: 0 auto;
+    padding: 0;
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from "react-redux";
 import MainPage from "./MainPage";
-import {setGif, setSearchGif} from "../../redux/mainpage-reducer";
+import {setCategoriesSearchGif, setGif, setSearchGif} from "../../redux/mainpage-reducer";
 
 class MainPageContainer extends React.Component {
     componentDidMount() {
@@ -16,6 +16,7 @@ class MainPageContainer extends React.Component {
         return <MainPage data={this.props.data}
                          dataSearch={this.props.dataSearch}
                          searchGif={this.searchGif}
+                         setCategoriesSearchGif={this.props.setCategoriesSearchGif}
                          preload={this.props.preload}/>
     }
 }
@@ -30,6 +31,5 @@ let mapStateToProps = (state,) => {
 }
 
 export default MainPageContainer = connect(mapStateToProps, {
-    setGif,
-    setSearchGif,
+    setGif, setSearchGif, setCategoriesSearchGif
 })(MainPageContainer)

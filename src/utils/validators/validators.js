@@ -1,14 +1,13 @@
-import { SubmissionError } from 'redux-form'
+import {SubmissionError} from 'redux-form'
 
-const submit = (values) => {
-    if (values.textField) {
+ const submit = (values) => {
+    if (values.textField )  {
         return undefined
-    } else if (!values.textField) {
+    } else if (!values.textField ) {
         throw new SubmissionError({
-            textField: 'User does not exist'
+            textField: 'Не может быть пустым.',
         })
     }
 }
-
 
 export default submit

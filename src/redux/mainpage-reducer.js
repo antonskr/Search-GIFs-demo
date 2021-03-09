@@ -1,4 +1,4 @@
-import {giphyAPI,} from "../api/api";
+import {giphyAPI} from "../api/api";
 
 const SET_GIF = 'SET_GIF';
 const SET_SEARCH_GIF = 'SET_SEARCH_GIF';
@@ -8,7 +8,6 @@ let initialState = {
     data: [],
     dataSearch: [],
     preload: false,
-    someString: 'hello world'
 }
 
 const mainPageReducer = (state = initialState, action) => {
@@ -18,7 +17,7 @@ const mainPageReducer = (state = initialState, action) => {
         }
 
         case SET_SEARCH_GIF: {
-            return {...state, dataSearch: action.data}
+            return {...state, dataSearch: state.dataSearch.concat(action.data)}
         }
 
         case ON_PRELOADER: {
@@ -29,10 +28,10 @@ const mainPageReducer = (state = initialState, action) => {
             return state
     }
 }
-export const setGif = () => async (dispatch) => {
-
+export const setGif = (endPoint, value) => async (dispatch) => {
+    debugger
     dispatch(preloaderAc(true))
-    let data = await giphyAPI.getGiphyData()
+    let data = await giphyAPI.getGiphyData(endPoint, value)
     dispatch(setGivAC(data.data))
     dispatch(preloaderAc(false))
 }
@@ -45,7 +44,15 @@ export const setSearchGif = (text) => async (dispatch) => {
     dispatch(setSearchGivAC(data.data))
 }
 
-export default mainPageReducer
-export const setGivAC = (data) => ({type: SET_GIF, data})
-export const setSearchGivAC = (data) => ({type: SET_SEARCH_GIF, data})
-export const preloaderAc = (isTrue) => ({type: ON_PRELOADER, isTrue})
+export const setCategoriesSearchGif = (text) => async (dispatch) => {
+    dispatch(preloaderAc(true))
+    let data = await giphyAPI.getCategoriesSearchGif(text)
+    dispatch(setGivAC(data.data))
+    dispatch(preloaderAc(false))
+}
+
+export default mainPageReducer;
+
+export const setGivAC = (data) => ({type: SET_GIF, data});
+export const setSearchGivAC = (data) => ({type: SET_SEARCH_GIF, data});
+export const preloaderAc = (isTrue) => ({type: ON_PRELOADER, isTrue});

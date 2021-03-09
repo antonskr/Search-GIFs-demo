@@ -3,6 +3,7 @@ import s from './mainPage.module.css'
 import {AddSearchFormRedux} from "../searchForm/SearchForm";
 import TrendingGifs from "./ trendingGifs/ TrendingGifs";
 import SearchGifs from "./searchGifs/SearchGifs";
+import GifCategories from "./gifCategories/GifCategories";
 
 
 const MainPage = (props) => {
@@ -11,11 +12,12 @@ const MainPage = (props) => {
     }
     return (
         <div className={s.wrapper}>
+            <GifCategories setCategoriesSearchGif={props.setCategoriesSearchGif}/>
             <span>
                <AddSearchFormRedux onSubmit={values => {
                    AddNewMessage(values.textField)
                }}
-                                   preload={props.preload}/>
+               />
            </span>
             <SearchGifs preload={props.preload}
                         dataSearch={props.dataSearch}/>

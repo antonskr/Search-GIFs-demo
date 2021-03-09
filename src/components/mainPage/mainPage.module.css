@@ -11,9 +11,6 @@
     overflow: auto
 }
 
-
-
-
 .gifWrapper {
     margin: 0 auto;
     align-content: center;
@@ -27,9 +24,13 @@
 }
 
 .searchFormBlock {
-    writing-mode: vertical-lr;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
     margin: 10px 0 12px 0;
+}
+
+.form {
+    width: 100px;
 }
 
 .searchFormBlock button {
@@ -52,7 +53,7 @@
     height: 115px;
 }
 
-.imageBlock{
+.imageBlock {
     width: 350px;
     background-color: #26c3ff;
     margin: 5px;
@@ -62,3 +63,4 @@
 .preloaderBlock {
     display: flex;
 }
+
