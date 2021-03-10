@@ -7,9 +7,11 @@ import GifCategories from "./gifCategories/GifCategories";
 
 
 const MainPage = (props) => {
-    let AddNewMessage = (values) => {
+
+    const AddNewMessage = (values) => {
         props.searchGif(values);
     }
+
     return (
         <div className={s.wrapper}>
             <GifCategories setCategoriesSearchGif={props.setCategoriesSearchGif}/>

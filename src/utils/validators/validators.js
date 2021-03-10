@@ -1,11 +1,11 @@
 import {SubmissionError} from 'redux-form'
 
- const submit = (values) => {
-    if (values.textField )  {
+const submit = (values) => {
+    if (values.textField) {
         return undefined
-    } else if (!values.textField ) {
+    } else if (!values.textField) {
         throw new SubmissionError({
-            textField: 'Не может быть пустым.',
+            textField: 'Can\'t be empty'
         })
     }
 }

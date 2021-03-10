@@ -4,10 +4,10 @@ const SET_GIF = 'SET_GIF';
 const SET_SEARCH_GIF = 'SET_SEARCH_GIF';
 const ON_PRELOADER = 'ON_PRELOADER';
 
-let initialState = {
+const initialState = {
     data: [],
     dataSearch: [],
-    preload: false,
+    preload: false
 }
 
 const mainPageReducer = (state = initialState, action) => {
@@ -28,25 +28,24 @@ const mainPageReducer = (state = initialState, action) => {
             return state
     }
 }
+
 export const setGif = (endPoint, value) => async (dispatch) => {
-    debugger
     dispatch(preloaderAc(true))
-    let data = await giphyAPI.getGiphyData(endPoint, value)
+    const data = await giphyAPI.getGiphyData(endPoint, value)
     dispatch(setGivAC(data.data))
     dispatch(preloaderAc(false))
 }
 
-
 export const setSearchGif = (text) => async (dispatch) => {
     dispatch(preloaderAc(true))
-    let data = await giphyAPI.getSearchGiphyData(text)
+    const data = await giphyAPI.getSearchGiphyData(text)
     dispatch(preloaderAc(false))
     dispatch(setSearchGivAC(data.data))
 }
 
 export const setCategoriesSearchGif = (text) => async (dispatch) => {
     dispatch(preloaderAc(true))
-    let data = await giphyAPI.getCategoriesSearchGif(text)
+    const data = await giphyAPI.getCategoriesSearchGif(text)
     dispatch(setGivAC(data.data))
     dispatch(preloaderAc(false))
 }

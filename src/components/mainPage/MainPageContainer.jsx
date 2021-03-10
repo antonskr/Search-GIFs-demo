@@ -21,7 +21,7 @@ class MainPageContainer extends React.Component {
     }
 }
 
-let mapStateToProps = (state,) => {
+const mapStateToProps = (state,) => {
     return {
         data: state.mainPage.data,
         dataSearch: state.mainPage.dataSearch,

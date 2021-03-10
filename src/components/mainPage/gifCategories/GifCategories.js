@@ -1,19 +1,23 @@
 import React from 'react'
 import s from './GigCategories.module.css'
 
-const GifCategories = (props) => {
-    debugger
-
-    const changeCategories = (e) => {
-        props.setCategoriesSearchGif(e.currentTarget.innerText)
-    }
+const GifCategories = ({setCategoriesSearchGif}) => {
 
     return (
         <div className={s.categoriesWrapper}>
             <ul>
-                <li onClick={changeCategories}> Смешные</li>
-                <li onClick={changeCategories}> Животные</li>
-                <li onClick={changeCategories}> Мемы</li>
+                <li onClick={(e) => {
+                    setCategoriesSearchGif(e.currentTarget.innerText)
+                }}> Смешные
+                </li>
+                <li onClick={(e) => {
+                    setCategoriesSearchGif(e.currentTarget.innerText)
+                }}> Животные
+                </li>
+                <li onClick={(e) => {
+                    setCategoriesSearchGif(e.currentTarget.innerText)
+                }}> Мемы
+                </li>
             </ul>
         </div>
     )

@@ -6,13 +6,13 @@ const TrendingGifs = (props) => {
     return (
         <div className={s.GifWrapper}>
             {
-                props.preload === true && !props.data ? <div className={s.preloaderBlock}><Preloader/></div> :
+                props.preload && !props.data ? <div className={s.preloaderBlock}><Preloader/></div> :
 
                     props.data.map(d => <span className={s.imageBlock} key={d.id}>
                         <div>
                             <img className={s.images} src={d.images.original.url} alt=""/>
                             <div className={s.descriptionBlock}>
-                                <p className={s.username}>{`Created by  ${d.username}`}</p>
+                                <p className={s.username}>{d.username ? `Created by ${d.username}` : "Created by unknown"}</p>
                                 <p className={s.descripton}> {d.title} </p>
                             </div>
                         </div>

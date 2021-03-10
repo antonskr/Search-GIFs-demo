@@ -1,11 +1,13 @@
+
 li:hover {
     color: white;
 }
 
 .categoriesWrapper {
     background-color: #26c3ff;
-    display: inline-block;
+    display: inline-flex;
     width: 100%;
+    cursor: pointer;
 }
 
 .categoriesWrapper li {
