@@ -1,32 +1,35 @@
 import React from "react";
-import s from './mainPage.module.css'
-import {AddSearchFormRedux} from "../searchForm/SearchForm";
-import TrendingGifs from "./ trendingGifs/ TrendingGifs";
+import s from "./mainPage.module.css";
+import TrendingGifs from "./ trendingGifs/TrendingGifs";
 import SearchGifs from "./searchGifs/SearchGifs";
 import GifCategories from "./gifCategories/GifCategories";
+import AddSearchFormRedux from "../searchForm/SearchForm";
 
+const MainPage = ({
+  data,
+  dataSearch,
+  preload,
+  searchGif,
+  setCategoriesSearchGif,
+}) => {
+  const AddNewMessage = (values) => {
+    searchGif(values);
+  };
 
-const MainPage = (props) => {
+  return (
+    <div className={s.wrapper}>
+      <GifCategories setCategoriesSearchGif={setCategoriesSearchGif} />
+      <span>
+        <AddSearchFormRedux
+          onSubmit={(values) => {
+            AddNewMessage(values.textField);
+          }}
+        />
+      </span>
+      <SearchGifs preload={preload} dataSearch={dataSearch} />
 
-    const AddNewMessage = (values) => {
-        props.searchGif(values);
-    }
-
-    return (
-        <div className={s.wrapper}>
-            <GifCategories setCategoriesSearchGif={props.setCategoriesSearchGif}/>
-            <span>
-               <AddSearchFormRedux onSubmit={values => {
-                   AddNewMessage(values.textField)
-               }}
-               />
-           </span>
-            <SearchGifs preload={props.preload}
-                        dataSearch={props.dataSearch}/>
-
-            <TrendingGifs preload={props.preload}
-                          data={props.data}/>
-        </div>
-    )
-}
-export default MainPage
+      <TrendingGifs preload={preload} data={data} />
+    </div>
+  );
+};
+export default MainPage;
