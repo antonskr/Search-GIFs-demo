@@ -11,6 +11,7 @@ const MainPage = ({
   preload,
   searchGif,
   setCategoriesSearchGif,
+  deleteCurrentGif,
 }) => {
   const AddNewMessage = (values) => {
     searchGif(values);
@@ -26,7 +27,11 @@ const MainPage = ({
           }}
         />
       </span>
-      <SearchGifs preload={preload} dataSearch={dataSearch} />
+      <SearchGifs
+        preload={preload}
+        dataSearch={dataSearch}
+        deleteCurrentGif={deleteCurrentGif}
+      />
 
       <TrendingGifs preload={preload} data={data} />
     </div>

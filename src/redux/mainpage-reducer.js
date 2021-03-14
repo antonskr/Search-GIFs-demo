@@ -3,6 +3,7 @@ import giphyAPI from "../api/api";
 const SET_GIF = "SET_GIF";
 const SET_SEARCH_GIF = "SET_SEARCH_GIF";
 const ON_PRELOADER = "ON_PRELOADER";
+const DELETE_CURRENT_GIF = "DELETE_CURRENT_GIF";
 
 const initialState = {
   data: [],
@@ -24,6 +25,13 @@ const mainPageReducer = (state = initialState, action) => {
       return { ...state, preload: action.isTrue };
     }
 
+    case DELETE_CURRENT_GIF: {
+      return {
+        ...state,
+        dataSearch: state.dataSearch.filter((el) => el.id !== action.id),
+      };
+    }
+
     default:
       return state;
   }
@@ -32,6 +40,7 @@ const mainPageReducer = (state = initialState, action) => {
 export const setGivAC = (data) => ({ type: SET_GIF, data });
 export const setSearchGivAC = (data) => ({ type: SET_SEARCH_GIF, data });
 export const preloaderAc = (isTrue) => ({ type: ON_PRELOADER, isTrue });
+export const deleteCurrentGifAc = (id) => ({ type: DELETE_CURRENT_GIF, id });
 
 export const setGif = (endPoint, value) => async (dispatch) => {
   dispatch(preloaderAc(true));

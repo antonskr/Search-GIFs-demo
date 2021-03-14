@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import MainPage from "./MainPage";
 import {
+  deleteCurrentGifAc,
   setCategoriesSearchGif,
   setGif,
   setSearchGif,
@@ -16,6 +17,10 @@ class MainPageContainer extends React.Component {
     this.props.setSearchGif(message);
   };
 
+  deleteCurrentGif = (id) => {
+    this.props.deleteCurrentGifAc(id);
+  };
+
   render() {
     const { data, dataSearch, preload } = this.props;
     return (
@@ -25,6 +30,7 @@ class MainPageContainer extends React.Component {
         searchGif={this.searchGif}
         setCategoriesSearchGif={this.props.setCategoriesSearchGif}
         preload={preload}
+        deleteCurrentGif={this.deleteCurrentGif}
       />
     );
   }
@@ -44,4 +50,5 @@ export default MainPageContainer = connect(mapStateToProps, {
   setGif,
   setSearchGif,
   setCategoriesSearchGif,
+  deleteCurrentGifAc,
 })(MainPageContainer);

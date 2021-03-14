@@ -52,7 +52,18 @@
     border-style: dotted;
     height: 115px;
 }
+.descriptionBlock button {
+    color: white;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    float: right;
+}
 
+.descriptionBlock button:hover {
+    color: #e76984;
+    cursor: pointer;
+}
 .imageBlock {
     width: 350px;
     background-color: #26c3ff;
