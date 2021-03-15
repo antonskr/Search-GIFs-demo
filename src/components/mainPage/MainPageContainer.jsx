@@ -23,8 +23,6 @@ class MainPageContainer extends React.Component {
   };
 
   updateTotalCount = () => {
-    // eslint-disable-next-line no-debugger
-    debugger;
     this.props.setTotalCountAc();
   };
 

@@ -12,6 +12,7 @@ const initialState = {
   preload: false,
   totalCount: 4,
   isActive: true,
+  currentSearchQuery: null,
 };
 
 const mainPageReducer = (state = initialState, action) => {
@@ -23,7 +24,7 @@ const mainPageReducer = (state = initialState, action) => {
     case SET_SEARCH_GIF: {
       return {
         ...state,
-        dataSearch: state.dataSearch.concat(action.data),
+        dataSearch: action.data,
         isActive: false,
       };
     }
@@ -40,8 +41,6 @@ const mainPageReducer = (state = initialState, action) => {
     }
 
     case UPDATE_TOTAL_COUNT: {
-      // eslint-disable-next-line no-debugger
-      debugger;
       return { ...state, totalCount: state.totalCount + 4 };
     }
 

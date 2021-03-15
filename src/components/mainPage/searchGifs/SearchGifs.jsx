@@ -3,7 +3,6 @@ import Preloader from "../../../assets/preloader/Preloader/Preloader";
 import s from "../mainPage.module.css";
 import SubShare from "../../subShare/SubShare";
 
-// eslint-disable-next-line no-unused-vars
 const SearchGifs = ({ dataSearch, preload, deleteCurrentGif, totalCount }) => {
   return (
     <div>
