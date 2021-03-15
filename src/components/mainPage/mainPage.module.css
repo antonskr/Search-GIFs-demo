@@ -70,3 +70,14 @@
     margin: 5px;
     display: inline-grid;
 }
+
+.showMoreBtn {
+    background-color: transparent;
+    outline: none;
+    border: none;
+}
+
+.showMoreBtn:hover {
+   color: white;
+    transition: 0.1s;
+}

@@ -4,7 +4,13 @@ import submit from "../../utils/validators/validators";
 import s from "../mainPage/mainPage.module.css";
 import { Input } from "../FormsControl/FormsControls";
 
-const addSearchForm = ({ dirty, handleSubmit, preload }) => {
+const addSearchForm = ({
+  dirty,
+  handleSubmit,
+  preload,
+  updateTotalCount,
+  isActive,
+}) => {
   return (
     <div>
       <form
@@ -18,7 +24,17 @@ const addSearchForm = ({ dirty, handleSubmit, preload }) => {
           label="TextField"
         />
         {/* eslint-disable-next-line react/button-has-type */}
-        <button disabled={preload}> поиск</button>
+        <button className={s.searchBtn} disabled={preload}>
+          поиск
+        </button>
+        <button
+          type="button"
+          className={s.showMoreBtn}
+          hidden={isActive}
+          onClick={updateTotalCount}
+        >
+          Показать ещё
+        </button>
       </form>
     </div>
   );

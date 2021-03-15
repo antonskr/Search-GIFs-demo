@@ -12,6 +12,9 @@ const MainPage = ({
   searchGif,
   setCategoriesSearchGif,
   deleteCurrentGif,
+  totalCount,
+  updateTotalCount,
+  isActive,
 }) => {
   const AddNewMessage = (values) => {
     searchGif(values);
@@ -25,12 +28,15 @@ const MainPage = ({
           onSubmit={(values) => {
             AddNewMessage(values.textField);
           }}
+          updateTotalCount={updateTotalCount}
+          isActive={isActive}
         />
       </span>
       <SearchGifs
         preload={preload}
         dataSearch={dataSearch}
         deleteCurrentGif={deleteCurrentGif}
+        totalCount={totalCount}
       />
 
       <TrendingGifs preload={preload} data={data} />

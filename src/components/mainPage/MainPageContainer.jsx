@@ -6,6 +6,7 @@ import {
   setCategoriesSearchGif,
   setGif,
   setSearchGif,
+  setTotalCountAc,
 } from "../../redux/mainpage-reducer";
 
 class MainPageContainer extends React.Component {
@@ -21,8 +22,14 @@ class MainPageContainer extends React.Component {
     this.props.deleteCurrentGifAc(id);
   };
 
+  updateTotalCount = () => {
+    // eslint-disable-next-line no-debugger
+    debugger;
+    this.props.setTotalCountAc();
+  };
+
   render() {
-    const { data, dataSearch, preload } = this.props;
+    const { data, dataSearch, preload, totalCount, isActive } = this.props;
     return (
       <MainPage
         data={data}
@@ -31,6 +38,9 @@ class MainPageContainer extends React.Component {
         setCategoriesSearchGif={this.props.setCategoriesSearchGif}
         preload={preload}
         deleteCurrentGif={this.deleteCurrentGif}
+        totalCount={totalCount}
+        updateTotalCount={this.updateTotalCount}
+        isActive={isActive}
       />
     );
   }
@@ -42,6 +52,8 @@ const mapStateToProps = (state) => {
     dataSearch: state.mainPage.dataSearch,
     currentText: state.mainPage.currentText,
     preload: state.mainPage.preload,
+    totalCount: state.mainPage.totalCount,
+    isActive: state.mainPage.isActive,
   };
 };
 
@@ -51,4 +63,5 @@ export default MainPageContainer = connect(mapStateToProps, {
   setSearchGif,
   setCategoriesSearchGif,
   deleteCurrentGifAc,
+  setTotalCountAc,
 })(MainPageContainer);

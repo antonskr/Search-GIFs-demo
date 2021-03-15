@@ -13,7 +13,7 @@ const giphyAPI = {
   getSearchGiphyData(text) {
     return instance
       .get(
-        `https://api.giphy.com/v1/gifs/search?api_key=${process.env.REACT_APP_API_KEY}&q=${text}&limit=1&offset=0&rating=r&lang=ru`
+        `https://api.giphy.com/v1/gifs/search?api_key=${process.env.REACT_APP_API_KEY}&q=${text}&limit=50&offset=0&rating=r&lang=ru`
       )
       .then((response) => {
         return response.data;
