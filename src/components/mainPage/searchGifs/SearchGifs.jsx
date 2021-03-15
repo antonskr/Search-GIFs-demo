@@ -21,7 +21,7 @@ const SearchGifs = ({ dataSearch, preload, deleteCurrentGif, totalCount }) => {
                 <button type="button" onClick={() => deleteCurrentGif(d.id)}>
                   &#10006;
                 </button>
-                <SubShare urlGif={d.images.original.url} />
+                <SubShare url={d.images.original.url} />
                 <p className={s.username}>
                   {d.username
                     ? `Created by ${d.username}`
