@@ -1,6 +1,7 @@
 import React from "react";
 import s from "../mainPage.module.css";
 import Preloader from "../../../assets/preloader/Preloader/Preloader";
+import SubShare from "../../subShare/SubShare";
 
 const TrendingGifs = ({ data, preload }) => {
   return (
@@ -15,6 +16,7 @@ const TrendingGifs = ({ data, preload }) => {
             <div>
               <img className={s.images} src={d.images.downsized.url} alt="" />
               <div className={s.descriptionBlock}>
+                <SubShare url={d.images.original.url} />
                 <p className={s.username}>
                   {d.username
                     ? `Created by ${d.username}`
