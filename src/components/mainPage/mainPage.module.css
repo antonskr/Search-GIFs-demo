@@ -23,25 +23,6 @@
     background-color: #282c34;
 }
 
-.searchFormBlock {
-    display: flex;
-    justify-content: center;
-    margin: 10px 0 12px 0;
-}
-
-.form {
-    width: 100px;
-}
-
-.searchFormBlock button {
-    height: 28px;
-    width: 50px;
-}
-
-.searchFormBlock input {
-    height: 22px;
-}
-
 .images {
     width: 350px;
     height: 350px;
@@ -52,6 +33,7 @@
     border-style: dotted;
     height: 115px;
 }
+
 .descriptionBlock button {
     color: white;
     border: none;
@@ -64,6 +46,7 @@
     color: #e76984;
     cursor: pointer;
 }
+
 .imageBlock {
     width: 350px;
     background-color: #26c3ff;
@@ -71,13 +54,3 @@
     display: inline-grid;
 }
 
-.showMoreBtn {
-    background-color: transparent;
-    outline: none;
-    border: none;
-}
-
-.showMoreBtn:hover {
-   color: white;
-    transition: 0.1s;
-}

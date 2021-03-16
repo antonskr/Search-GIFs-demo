@@ -1,7 +1,7 @@
 import { Field, reduxForm, reset } from "redux-form";
 import React from "react";
 import submit from "../../utils/validators/validators";
-import s from "../mainPage/mainPage.module.css";
+import form from "./SearchForm.module.css";
 import { Input } from "../FormsControl/FormsControls";
 
 const addSearchForm = ({
@@ -13,10 +13,7 @@ const addSearchForm = ({
 }) => {
   return (
     <div>
-      <form
-        className={s.searchFormBlock}
-        onSubmit={dirty ? handleSubmit : handleSubmit(submit)}
-      >
+      <form onSubmit={dirty ? handleSubmit : handleSubmit(submit)}>
         <Field
           name="textField"
           type="input"
@@ -24,12 +21,10 @@ const addSearchForm = ({
           label="TextField"
         />
         {/* eslint-disable-next-line react/button-has-type */}
-        <button className={s.searchBtn} disabled={preload}>
-          поиск
-        </button>
+        <button disabled={preload}>поиск</button>
         <button
           type="button"
-          className={s.showMoreBtn}
+          className={form.showMoreBtn}
           hidden={isActive}
           onClick={updateTotalCount}
         >

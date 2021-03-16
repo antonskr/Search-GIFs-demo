@@ -1,0 +1,32 @@
+
+.searchFormWrapper {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+}
+
+.searchFormWrapper form {
+    display: flex;
+}
+
+.searchFormWrapper button {
+    height: 28px;
+    width: 50px;
+}
+
+.searchFormWrapper input {
+    height: 22px;
+}
+
+.showMoreBtn {
+    background-color: transparent;
+    outline: none;
+    border: none;
+}
+
+.showMoreBtn:hover {
+    color: white;
+    transition: 0.1s;
+}

@@ -1,5 +1,6 @@
 import React from "react";
 import s from "./mainPage.module.css";
+import form from "../searchForm/SearchForm.module.css";
 import TrendingGifs from "./ trendingGifs/TrendingGifs";
 import SearchGifs from "./searchGifs/SearchGifs";
 import GifCategories from "./gifCategories/GifCategories";
@@ -23,7 +24,7 @@ const MainPage = ({
   return (
     <div className={s.wrapper}>
       <GifCategories setCategoriesSearchGif={setCategoriesSearchGif} />
-      <span>
+      <div className={form.searchFormWrapper}>
         <AddSearchFormRedux
           onSubmit={(values) => {
             AddNewMessage(values.textField);
@@ -31,7 +32,7 @@ const MainPage = ({
           updateTotalCount={updateTotalCount}
           isActive={isActive}
         />
-      </span>
+      </div>
       <SearchGifs
         preload={preload}
         dataSearch={dataSearch}
