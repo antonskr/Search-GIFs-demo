@@ -5,6 +5,7 @@
     padding: 10px;
     position: sticky;
     top: 0;
+    background-color: #f6f6f2;
 }
 
 .searchFormWrapper form {
@@ -21,12 +22,13 @@
 }
 
 .showMoreBtn {
+    color: #282c34;
     background-color: transparent;
     outline: none;
     border: none;
 }
 
 .showMoreBtn:hover {
-    color: white;
+    font-weight: bold;
     transition: 0.1s;
 }

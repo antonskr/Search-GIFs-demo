@@ -1,5 +1,5 @@
 import React from "react";
-import s from "./GigCategories.module.css";
+import s from "./GifCategories.module.css";
 
 const GifCategories = ({ setCategoriesSearchGif }) => {
   return (

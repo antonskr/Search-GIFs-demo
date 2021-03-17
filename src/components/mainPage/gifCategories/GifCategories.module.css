@@ -5,6 +5,10 @@
     width: 100%;
 }
 
+.categoriesWrapper button {
+    padding: 0;
+}
+
 .GifCategoriesBtn {
     background-color: transparent;
     border: none;
