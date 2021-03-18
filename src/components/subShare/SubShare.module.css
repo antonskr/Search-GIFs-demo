@@ -1,5 +1,8 @@
 
 .subShareItem button {
     float: left;
-    border-radius: 30px;
+    border-radius: 0;
+    padding: 0;
+    height: 0;
+    z-index: 1;
 }

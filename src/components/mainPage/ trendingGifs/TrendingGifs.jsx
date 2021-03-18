@@ -13,17 +13,13 @@ const TrendingGifs = ({ data, preload }) => {
       ) : (
         data.map((d) => (
           <span className={s.imageBlock} key={d.id}>
-            <div>
-              <img className={s.images} src={d.images.downsized.url} alt="" />
-              <div className={s.descriptionBlock}>
-                <SubShare url={d.images.original.url} />
-                <p className={s.username}>
-                  {d.username
-                    ? `Created by ${d.username}`
-                    : "Created by unknown"}
-                </p>
-                <p className={s.descripton}> {d.title} </p>
-              </div>
+            <img className={s.images} src={d.images.downsized.url} alt="" />
+            <div className={s.descriptionBlock}>
+              <SubShare url={d.images.original.url} />
+              <p className={s.username}>
+                {d.username ? `Created by ${d.username}` : "Created by unknown"}
+              </p>
+              <p className={s.descripton}> {d.title} </p>
             </div>
           </span>
         ))

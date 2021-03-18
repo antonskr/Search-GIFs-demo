@@ -3,35 +3,27 @@ import React from "react";
 import submit from "../../utils/validators/validators";
 import form from "./SearchForm.module.css";
 import { Input } from "../FormsControl/FormsControls";
+import icon from "../../assets/searchIcon/searchIcon.svg";
 
-const addSearchForm = ({
-  dirty,
-  handleSubmit,
-  preload,
-  updateTotalCount,
-  isActive,
-}) => {
+const addSearchForm = ({ dirty, handleSubmit, preload }) => {
   return (
-    <div>
-      <form onSubmit={dirty ? handleSubmit : handleSubmit(submit)}>
-        <Field
-          name="textField"
-          type="input"
-          component={Input}
-          label="TextField"
-        />
-        {/* eslint-disable-next-line react/button-has-type */}
-        <button disabled={preload}>поиск</button>
-        <button
-          type="button"
-          className={form.showMoreBtn}
-          hidden={isActive}
-          onClick={updateTotalCount}
-        >
-          Показать ещё
-        </button>
-      </form>
-    </div>
+    <form onSubmit={dirty ? handleSubmit : handleSubmit(submit)}>
+      {/* eslint-disable-next-line react/button-has-type */}
+      <button
+        disabled={preload}
+        style={{
+          backgroundImage: `url(${icon})`,
+        }}
+      >
+        {" "}
+      </button>
+      <Field
+        name="textField"
+        type="input"
+        component={Input}
+        label="TextField"
+      />
+    </form>
   );
 };
 const afterSubmit = (result, dispatch) => dispatch(reset("searchGif"));

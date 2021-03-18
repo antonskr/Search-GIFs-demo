@@ -5,6 +5,7 @@ import TrendingGifs from "./ trendingGifs/TrendingGifs";
 import SearchGifs from "./searchGifs/SearchGifs";
 import GifCategories from "./gifCategories/GifCategories";
 import AddSearchFormRedux from "../searchForm/SearchForm";
+import ShowMore from "./showMore/ShowMore";
 
 const MainPage = ({
   data,
@@ -33,13 +34,13 @@ const MainPage = ({
           isActive={isActive}
         />
       </div>
+      {!isActive ? <ShowMore updateTotalCount={updateTotalCount} /> : null}
       <SearchGifs
         preload={preload}
         dataSearch={dataSearch}
         deleteCurrentGif={deleteCurrentGif}
         totalCount={totalCount}
       />
-
       <TrendingGifs preload={preload} data={data} />
     </div>
   );

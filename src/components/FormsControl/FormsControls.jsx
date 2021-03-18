@@ -14,8 +14,7 @@ export const Input = (props) => {
   const { input, meta, child, element, ...restProps } = props;
   return (
     <FormControl {...props}>
-      {" "}
-      <input {...input} {...restProps} />{" "}
+      <input {...input} {...restProps} />
     </FormControl>
   );
 };

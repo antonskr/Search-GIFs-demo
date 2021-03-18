@@ -1,5 +1,5 @@
 .categoriesWrapper {
-    background-color: #26c3ff;
+    background-color: #212121;
     display: flex;
     flex-flow: column nowrap;
     width: 100%;
@@ -13,10 +13,11 @@
     background-color: transparent;
     border: none;
     font-size: 22px;
-    color: white;
+    color: #ffffff;
     outline: none;
 }
+
 .GifCategoriesBtn:hover {
-   color: #282c34;
     cursor: pointer;
+    color: #dfecfc;
 }
