@@ -2,8 +2,16 @@ import React from "react";
 import Preloader from "../../../assets/preloader/Preloader/Preloader";
 import s from "../mainPage.module.css";
 import SubShare from "../../subShare/SubShare";
+import GifsDetails from "../../gifsDetails/GifsDeatails";
 
-const SearchGifs = ({ dataSearch, preload, deleteCurrentGif, totalCount }) => {
+const SearchGifs = ({
+  dataSearch,
+  preload,
+  deleteCurrentGif,
+  totalCount,
+  setUpdateDetails,
+  showDetails,
+}) => {
   return (
     <div>
       {preload ? (
@@ -16,7 +24,19 @@ const SearchGifs = ({ dataSearch, preload, deleteCurrentGif, totalCount }) => {
           .reverse()
           .map((d) => (
             <span className={s.imageBlock} key={d.id}>
-              <img className={s.images} src={d.images.original.url} alt="" />
+              {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions,jsx-a11y/click-events-have-key-events */}
+              <img
+                className={s.images}
+                src={d.images.original.url}
+                alt=""
+                onClick={() => {
+                  setUpdateDetails({
+                    display: "block",
+                    data: d,
+                    page: "searchPage",
+                  });
+                }}
+              />
               <div className={s.descriptionBlock}>
                 <button type="button" onClick={() => deleteCurrentGif(d.id)}>
                   &#10006;
@@ -32,6 +52,12 @@ const SearchGifs = ({ dataSearch, preload, deleteCurrentGif, totalCount }) => {
             </span>
           ))
       )}
+      {showDetails.page === "searchPage" ? (
+        <GifsDetails
+          showDetails={showDetails}
+          setUpdateDetails={setUpdateDetails}
+        />
+      ) : null}
     </div>
   );
 };

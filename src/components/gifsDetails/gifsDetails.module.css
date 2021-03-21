@@ -1,0 +1,37 @@
+
+.GifsDetailsBlock {
+    color: #ffffff;
+    background: #000000eb;
+    width: 100%;
+    height: 600px;
+    position: fixed;
+    top: 50%;
+    margin-top: -300px;
+    transition: 0.5s;
+    overflow: auto;
+}
+
+.wrapper {
+    display: inline-block;
+}
+
+.description{
+    width: 100%;
+    word-wrap: break-word;
+}
+
+.subShare button{
+    outline: none;
+}
+
+.hideDetailsBtn {
+    position: absolute;
+    top: 0;
+    padding: 0;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 30px;
+    outline: none;
+}

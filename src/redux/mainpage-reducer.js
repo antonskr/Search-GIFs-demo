@@ -5,6 +5,7 @@ const SET_SEARCH_GIF = "SET_SEARCH_GIF";
 const ON_PRELOADER = "ON_PRELOADER";
 const DELETE_CURRENT_GIF = "DELETE_CURRENT_GIF";
 const UPDATE_TOTAL_COUNT = "UPDATE_TOTAL_COUNT";
+const UPDATE_DETAILS = "UPDATE_DETAILS";
 
 const initialState = {
   data: [],
@@ -12,7 +13,11 @@ const initialState = {
   preload: false,
   totalCount: 4,
   isActive: true,
-  currentSearchQuery: null,
+  showDetails: {
+    display: "none",
+    page: null,
+    data: [],
+  },
 };
 
 const mainPageReducer = (state = initialState, action) => {
@@ -44,6 +49,10 @@ const mainPageReducer = (state = initialState, action) => {
       return { ...state, totalCount: state.totalCount + 4 };
     }
 
+    case UPDATE_DETAILS: {
+      return { ...state, showDetails: action.details };
+    }
+
     default:
       return state;
   }
@@ -54,6 +63,10 @@ export const setSearchGivAC = (data) => ({ type: SET_SEARCH_GIF, data });
 export const preloaderAc = (isTrue) => ({ type: ON_PRELOADER, isTrue });
 export const deleteCurrentGifAc = (id) => ({ type: DELETE_CURRENT_GIF, id });
 export const setTotalCountAc = (value) => ({ type: UPDATE_TOTAL_COUNT, value });
+export const setShowDetailsAc = (details) => ({
+  type: UPDATE_DETAILS,
+  details,
+});
 
 export const setGif = (endPoint, value) => async (dispatch) => {
   dispatch(preloaderAc(true));
@@ -78,6 +91,10 @@ export const setCategoriesSearchGif = (text) => async (dispatch) => {
 
 export const setUpdateTotalCount = () => (dispatch) => {
   dispatch(setTotalCountAc());
+};
+
+export const updateDetails = (details) => (dispatch) => {
+  dispatch(setShowDetailsAc(details));
 };
 
 export default mainPageReducer;

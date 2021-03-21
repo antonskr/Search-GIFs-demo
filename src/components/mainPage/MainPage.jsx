@@ -1,7 +1,7 @@
 import React from "react";
 import s from "./mainPage.module.css";
 import form from "../searchForm/SearchForm.module.css";
-import TrendingGifs from "./ trendingGifs/TrendingGifs";
+import TrendingGifs from "./trendingGifs/TrendingGifs";
 import SearchGifs from "./searchGifs/SearchGifs";
 import GifCategories from "./gifCategories/GifCategories";
 import AddSearchFormRedux from "../searchForm/SearchForm";
@@ -17,6 +17,8 @@ const MainPage = ({
   totalCount,
   updateTotalCount,
   isActive,
+  showDetails,
+  setUpdateDetails,
 }) => {
   const AddNewMessage = (values) => {
     searchGif(values);
@@ -40,8 +42,15 @@ const MainPage = ({
         dataSearch={dataSearch}
         deleteCurrentGif={deleteCurrentGif}
         totalCount={totalCount}
+        showDetails={showDetails}
+        setUpdateDetails={setUpdateDetails}
       />
-      <TrendingGifs preload={preload} data={data} />
+      <TrendingGifs
+        preload={preload}
+        data={data}
+        showDetails={showDetails}
+        setUpdateDetails={setUpdateDetails}
+      />
     </div>
   );
 };
