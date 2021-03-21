@@ -8,13 +8,10 @@ const GifsDetails = ({ showDetails, setUpdateDetails }) => {
     <div
       className={s.GifsDetailsBlock}
       style={{ display: showDetails.display }}
-      onMouseLeave={() => {
-        setUpdateDetails({ display: "none", data });
-      }}
     >
       {data.length === 0 ? null : (
         <div className={s.wrapper}>
-          <div className={s.gifImage}>
+          <div className={s.imageBlock}>
             <img src={data.images.original.url} alt="/" />
             <button
               className={s.hideDetailsBtn}
