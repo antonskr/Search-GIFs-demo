@@ -7,21 +7,26 @@
     left: 0;
     width: 100%;
     height: 100%;
+    overflow: auto;
 }
 
 @media (max-width: 500px) {
+    .wrapper  {
+        width: 95%;
+    }
     .imageBlock img {
-        width: 90%;
+        width: 97.9%;
+    }
+    .hideDetailsBtn {
+        font-size: 25px;
+        right: 1%;
     }
 }
 
 
 .wrapper {
-    position: absolute;
     display: inline-block;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin-top: 3%;
 }
 
 .description{
@@ -29,7 +34,7 @@
     word-wrap: break-word;
 }
 
-.subShare button{
+.subShareDetails button{
     outline: none;
 }
 

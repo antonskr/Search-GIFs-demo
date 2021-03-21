@@ -10,8 +10,8 @@ const GifsDetails = ({ showDetails, setUpdateDetails }) => {
       style={{ display: showDetails.display }}
     >
       {data.length === 0 ? null : (
-        <div className={s.wrapper}>
-          <div className={s.imageBlock}>
+        <div className={s.imageBlock}>
+          <div className={s.wrapper}>
             <img src={data.images.original.url} alt="/" />
             <button
               className={s.hideDetailsBtn}
@@ -22,8 +22,8 @@ const GifsDetails = ({ showDetails, setUpdateDetails }) => {
             >
               &#10006;
             </button>
-            <div className={s.descrition}>
-              <div className={s.subShare}>
+            <div className={s.description}>
+              <div className={s.subShareDetails}>
                 <SubShare url={data.url} />
               </div>
               <p> {data.username ? data.username : null} </p>
