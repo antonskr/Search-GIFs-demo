@@ -1,7 +1,7 @@
 import * as axios from "axios";
 
 const instance = axios.create({
-  baseURL: `https://api.giphy.com/v1/gifs/trending?api_key=${process.env.REACT_APP_API_KEY}&limit=4&rating=r`,
+  baseURL: `https://api.giphy.com/v1/gifs/trending?api_key=${process.env.REACT_APP_API_KEY}&limit=8&rating=r`,
 });
 
 const giphyAPI = {

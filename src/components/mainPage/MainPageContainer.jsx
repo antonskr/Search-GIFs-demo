@@ -40,6 +40,7 @@ class MainPageContainer extends React.Component {
       isActive,
       showDetails,
     } = this.props;
+
     return (
       <MainPage
         data={data}
