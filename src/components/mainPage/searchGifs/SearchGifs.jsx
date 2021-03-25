@@ -33,7 +33,7 @@ const SearchGifs = ({
                   setUpdateDetails({
                     display: "block",
                     data: d,
-                    page: "searchPage",
+                    location: "searchGifs",
                   });
                 }}
               />
@@ -52,7 +52,7 @@ const SearchGifs = ({
             </span>
           ))
       )}
-      {showDetails.page === "searchPage" ? (
+      {showDetails.location === "searchGifs" ? (
         <GifsDetails
           showDetails={showDetails}
           setUpdateDetails={setUpdateDetails}

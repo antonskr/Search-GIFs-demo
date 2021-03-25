@@ -20,7 +20,7 @@ const TrendingGifs = ({ data, preload, showDetails, setUpdateDetails }) => {
                 setUpdateDetails({
                   display: "block",
                   data: d,
-                  page: "trendingPage",
+                  location: "trendingGifs",
                 });
               }}
               className={s.images}
@@ -37,7 +37,7 @@ const TrendingGifs = ({ data, preload, showDetails, setUpdateDetails }) => {
           </span>
         ))
       )}
-      {showDetails.page === "trendingPage" ? (
+      {showDetails.location === "trendingGifs" ? (
         <GifsDetails
           showDetails={showDetails}
           setUpdateDetails={setUpdateDetails}

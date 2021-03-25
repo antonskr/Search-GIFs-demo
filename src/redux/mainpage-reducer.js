@@ -15,8 +15,8 @@ const initialState = {
   isActive: true,
   showDetails: {
     display: "none",
-    page: null,
     data: [],
+    location: null,
   },
 };
 
