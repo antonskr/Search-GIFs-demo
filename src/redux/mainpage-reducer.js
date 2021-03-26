@@ -6,10 +6,12 @@ const ON_PRELOADER = "ON_PRELOADER";
 const DELETE_CURRENT_GIF = "DELETE_CURRENT_GIF";
 const UPDATE_TOTAL_COUNT = "UPDATE_TOTAL_COUNT";
 const UPDATE_DETAILS = "UPDATE_DETAILS";
+const SET_ERROR_MESSAGE = "SET_ERROR_MESSAGE";
 
 const initialState = {
   data: [],
   dataSearch: [],
+  error: null,
   preload: false,
   totalCount: 4,
   isActive: true,
@@ -53,6 +55,10 @@ const mainPageReducer = (state = initialState, action) => {
       return { ...state, showDetails: action.details };
     }
 
+    case SET_ERROR_MESSAGE: {
+      return { ...state, error: action.value };
+    }
+
     default:
       return state;
   }
@@ -62,6 +68,10 @@ export const setGivAC = (data) => ({ type: SET_GIF, data });
 export const setSearchGivAC = (data) => ({ type: SET_SEARCH_GIF, data });
 export const preloaderAc = (isTrue) => ({ type: ON_PRELOADER, isTrue });
 export const deleteCurrentGifAc = (id) => ({ type: DELETE_CURRENT_GIF, id });
+export const setErrorMessageAc = (value) => ({
+  type: SET_ERROR_MESSAGE,
+  value,
+});
 export const setTotalCountAc = (value) => ({ type: UPDATE_TOTAL_COUNT, value });
 export const setShowDetailsAc = (details) => ({
   type: UPDATE_DETAILS,
@@ -78,8 +88,14 @@ export const setGif = (endPoint, value) => async (dispatch) => {
 export const setSearchGif = (text) => async (dispatch) => {
   dispatch(preloaderAc(true));
   const data = await giphyAPI.getSearchGiphyData(text);
-  dispatch(preloaderAc(false));
-  dispatch(setSearchGivAC(data.data));
+  if (data.data.length) {
+    dispatch(preloaderAc(false));
+    dispatch(setSearchGivAC(data.data));
+    dispatch(setErrorMessageAc(null));
+  } else {
+    dispatch(preloaderAc(false));
+    dispatch(setErrorMessageAc("Nothing found"));
+  }
 };
 
 export const setCategoriesSearchGif = (text) => async (dispatch) => {
